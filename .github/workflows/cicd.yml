@@ -8,16 +8,22 @@ on:
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v2
+    name: Checkout 🛎️
+      uses: actions/checkout@v2
+
+    integrate:
+      - name: Integrate
 
       - name: Install 💿
         run: npm install
       
       - name: Unit Tests 🎉
         run: npm run test
-      
+
+    deploy:
+      needs: integrate
+      - name: Deploy
+
       - name: Build 🛠️
         run: npm run build
       
