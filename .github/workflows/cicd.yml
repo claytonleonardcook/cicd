@@ -1,4 +1,4 @@
-name: Continuous Integration
+name: Test, Build, and Deploy
 on:
   push:
     branches: [main]
@@ -9,11 +9,20 @@ jobs:
   check-bats-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-      - run: npm install
-      - run: npm run test
-      - run: npm run predeploy
-      - run: npm run deploy
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2
+
+      - name: Install 💿
+        run: npm install
+      
+      - name: Run Unit Tests 🎉
+        run: npm run test
+      
+      - name: Build 🛠️
+        run: npm run build
+      
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+          with:
+            branch: gh-pages
+            folder: build
