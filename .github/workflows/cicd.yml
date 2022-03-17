@@ -1,5 +1,4 @@
 name: Test, Build, and Deploy
-runs-on: ubuntu-latest
 
 on:
   push:
@@ -10,12 +9,13 @@ on:
 jobs:
   setup:
     name: Setup 🏗️
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
 
   integrate:
-    name: Integrate 🔌
+    name: Integrate ⚡
     needs: setup
     steps:
       - name: Install 💿
