@@ -16,7 +16,6 @@ jobs:
   integrate:
     needs: setup
     steps:
-      - name: Integrate
       - name: Install 💿
         run: npm install
       - name: Unit Tests 🎉
@@ -25,7 +24,6 @@ jobs:
   deploy:
     needs: [setup, integrate]
     steps:
-      - name: Deploy
       - name: Build 🛠️
         run: npm run build 
       - name: Deploy 🚀
