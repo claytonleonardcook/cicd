@@ -17,6 +17,7 @@ jobs:
   integrate:
     name: Integrate ⚡
     needs: setup
+    runs-on: ubuntu-latest
     steps:
       - name: Install 💿
         run: npm install
@@ -26,6 +27,7 @@ jobs:
   deploy:
     name: Deploy 🚀
     needs: [setup, integrate]
+    runs-on: ubuntu-latest
     steps:
       - name: Build 🛠️
         run: npm run build 
