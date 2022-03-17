@@ -18,9 +18,9 @@ jobs:
       - name: Unit Tests 🎉
         run: npm run test
       - name: Build React Project 🛠️
-        run: react-scripts build
+        run: npm run build
       - name: Build Storybook 📖
-        run: build-storybook -o ./build/storybook
+        run: npm run build-storybook
       - name: Deploy to GitHub Pages 📄
         uses: JamesIves/github-pages-deploy-action@v4
         with:
