@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import sum from './sum';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -12,17 +12,12 @@ function App() {
           <br />
           {sum(28, 36)}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
           Learn React
         </a>
       </header>
     </div>
   );
-}
+};
 
 export default App;
